@@ -421,12 +421,12 @@
       observer.observe(card);
     });
 
-    // Add click handlers for service buttons (you can customize these)
+    // Add click handlers for service buttons
     document.querySelectorAll('.service-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const cardTitle = e.target.closest('.card-hover').querySelector('h3').textContent;
         console.log(`Clicked: ${cardTitle}`);
-        // Add your service routing logic here
+        // Add service routing logic here
       });
     });
   </script>
