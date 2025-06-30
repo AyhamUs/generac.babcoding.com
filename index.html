@@ -25,6 +25,196 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* Enhanced Typography */
+    h1 {
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+    
+    h2 {
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+    
+    h3 {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    
+    .accent-text {
+      color: #ff6600;
+      font-weight: 600;
+    }
+    
+    .section-spacing {
+      margin-bottom: 4rem;
+    }
+    
+    /* Search Bar Styles */
+    .search-container {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 12px 48px 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #ff6600;
+      box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+    }
+    
+    .search-button {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .search-button:hover {
+      background: #e55a00;
+    }
+    
+    /* Mobile Menu Styles */
+    .mobile-menu-button {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .mobile-menu-button span {
+      width: 24px;
+      height: 3px;
+      background: #374151;
+      transition: all 0.3s ease;
+      transform-origin: 1px;
+    }
+    
+    .mobile-menu-button.open span:first-child {
+      transform: rotate(45deg);
+    }
+    
+    .mobile-menu-button.open span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    
+    .mobile-menu-button.open span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+    
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #e5e7eb;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      width: 100%;
+    }
+    
+    .mobile-nav.open {
+      display: block;
+    }
+    
+    .mobile-nav a {
+      display: block;
+      padding: 16px 20px;
+      border-bottom: 1px solid #f3f4f6;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-nav a:hover {
+      background: #f9fafb;
+      color: #ff6600;
+    }
+    
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-menu-button {
+        display: flex !important;
+      }
+      
+      .header-content {
+        position: relative;
+      }
+      
+      .user-info-desktop {
+        display: none;
+      }
+      
+      .search-container {
+        max-width: 100%;
+        margin: 0 16px;
+      }
+      
+      .section-spacing {
+        margin-bottom: 2.5rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .mobile-menu-button {
+        display: none !important;
+      }
+    }
+    
+    @media (min-width: 1025px) {
+      .mobile-menu-button {
+        display: none !important;
+      }
     }
     
     .card-hover {
@@ -165,20 +355,27 @@
 <body class="bg-gray-50 min-h-screen">
 
   <!-- Header -->
-  <header class="bg-white shadow-sm border-b border-gray-200">
+  <header class="bg-white shadow-sm border-b border-gray-200 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="header-content flex justify-between items-center h-16">
         <!-- Generac Logo -->
         <div class="flex items-center">
           <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Generac_Power_Systems_logo.png" 
                alt="Generac Power Systems" 
                class="h-8 w-auto">
-          <span class="ml-3 text-gray-600 text-sm">askIT Service Catalog</span>
+          <span class="ml-3 text-gray-600 text-sm hidden sm:block">askIT Service Catalog</span>
         </div>
         
-        <!-- User Info -->
-        <div class="flex items-center space-x-4">
-          <div class="flex items-center text-gray-600">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-button" id="mobileMenuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <!-- User Info (Desktop) -->
+        <div class="flex items-center space-x-4 user-info-desktop">
+          <div class="flex items-center text-gray-600 hidden lg:flex">
             <i class="bi bi-telephone mr-2"></i>
             <span class="font-medium">262-544-4811 x2222</span>
           </div>
@@ -195,10 +392,22 @@
         </div>
       </div>
     </div>
+      
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <div class="max-w-7xl mx-auto">
+        <a href="#"><i class="bi bi-house-door mr-2"></i>Home</a>
+        <a href="https://askit.generac.com/support/solutions"><i class="bi bi-lightbulb mr-2"></i>Solutions</a>
+        <a href="https://askit.generac.com/support/tickets"><i class="bi bi-ticket-perforated mr-2"></i>Tickets</a>
+        <a href="https://askit.generac.com/support/catalog/items"><i class="bi bi-grid-3x3-gap mr-2"></i>Service Catalog</a>
+        <a href="https://askit.generac.com/support/employee_onboarding"><i class="bi bi-person-badge mr-2"></i>Employee Onboarding</a>
+        <a href="tel:262-544-4811" class="lg:hidden"><i class="bi bi-telephone mr-2"></i>Call IT Support</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Navigation Bar -->
-  <nav class="bg-white border-b border-gray-200 shadow-sm">
+  <!-- Navigation Bar (Desktop) -->
+  <nav class="bg-white border-b border-gray-200 shadow-sm desktop-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-center space-x-8 h-12">
         <a href="#" class="nav-link flex items-center px-3 py-3 text-sm font-medium text-gray-700 hover:text-generac-orange">
@@ -229,15 +438,31 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     
     <!-- Welcome Section -->
-    <div class="text-center mb-12 fade-in">
-      <h1 class="text-4xl font-bold generac-blue mb-4">Welcome to askIT</h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Get help, request services, and find solutions for all your technology needs
+    <div class="text-center section-spacing fade-in">
+      <h1 class="text-4xl font-bold generac-blue mb-4">Welcome to <span class="accent-text">askIT</span></h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Get help, request services, and find <span class="accent-text">solutions</span> for all your technology needs
       </p>
+      
+      <!-- Search Bar -->
+      <div class="search-container">
+        <form id="searchForm" onsubmit="performSearch(event)">
+          <input 
+            type="text" 
+            class="search-input" 
+            placeholder="Search for help articles, services, or solutions..."
+            id="searchInput"
+            autocomplete="off"
+          >
+          <button type="submit" class="search-button">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
     </div>
 
     <!-- Main Service Buttons -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 section-spacing card-grid">
       
       <!-- Your Tickets -->
       <div class="bg-white rounded-lg shadow-md card-hover p-6 border border-gray-200">
@@ -322,7 +547,7 @@
     </div>
 
     <!-- Popular Services and Solutions -->
-    <div class="grid lg:grid-cols-2 gap-8">
+    <div class="grid lg:grid-cols-2 gap-8 section-spacing">
       
       <!-- Popular Services -->
       <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
@@ -399,6 +624,35 @@
   </footer>
 
   <script>
+    // Search functionality
+    function performSearch(event) {
+      event.preventDefault();
+      const searchTerm = document.getElementById('searchInput').value.trim();
+      if (searchTerm) {
+        window.open(`https://askit.generac.com/support/search?term=${encodeURIComponent(searchTerm)}`, '_blank');
+      }
+    }
+    
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      
+      mobileNav.classList.toggle('open');
+      mobileMenuBtn.classList.toggle('open');
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      
+      if (!mobileMenuBtn.contains(event.target) && !mobileNav.contains(event.target)) {
+        mobileNav.classList.remove('open');
+        mobileMenuBtn.classList.remove('open');
+      }
+    });
+    
     // Add smooth fade-in animations
     const observerOptions = {
       threshold: 0.1,
@@ -422,12 +676,11 @@
       observer.observe(card);
     });
 
-    // Add click handlers for service buttons (you can customize these)
+    // Add click handlers for service buttons
     document.querySelectorAll('.service-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const cardTitle = e.target.closest('.card-hover').querySelector('h3').textContent;
         console.log(`Clicked: ${cardTitle}`);
-        // Add your service routing logic here
       });
     });
   </script>
