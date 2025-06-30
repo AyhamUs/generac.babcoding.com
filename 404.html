@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--
+    © 2025 Ayham Issa - All Rights Reserved
+    This code is the exclusive property of Ayham Issa and is licensed solely for use by Generac Power Systems, Inc.
+    Unauthorized use, reproduction, distribution, or modification is strictly prohibited.
+    Any use outside of Generac Power Systems, Inc. requires explicit written permission from Ayham Issa.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | askIT</title>
+  <meta name="description" content="The page you're looking for cannot be found. Return to askIT Service Catalog for IT support and services.">
+  <link rel="icon" type="image/x-icon" href="https://www.generac.com/globalassets/shared/icons/favicon.ico">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Page Not Found | askIT">
+  <meta property="og:description" content="The page you're looking for cannot be found. Return to askIT Service Catalog for IT support and services.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://askit.generac.com">
+  <meta property="og:image" content="askIT_Logo_COLOR_trans.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Generac Power Systems askIT">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    
+    .generac-blue {
+      color: #00263e;
+    }
+    
+    .generac-blue-bg {
+      background-color: #00263e;
+    }
+    
+    .error-number {
+      font-size: 12rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #00263e;
+      text-shadow: 2px 2px 4px rgba(0, 38, 62, 0.1);
+    }
+    
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #00263e 0%, #001a2e 100%);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #001a2e 0%, #001122 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 38, 62, 0.3);
+    }
+    
+    .btn-secondary {
+      border: 2px solid #00263e;
+      color: #00263e;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background: #00263e;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .suggestion-card {
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .suggestion-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-color: #00263e;
+    }
+    
+    .icon-large {
+      font-size: 3rem;
+      color: #00263e;
+    }
+    
+    @media (max-width: 768px) {
+      .error-number {
+        font-size: 8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .error-number {
+        font-size: 6rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- askIT Logo -->
+        <div class="flex items-center">
+          <img src="askIT_Logo_COLOR_trans.png" 
+               alt="askIT" 
+               class="h-10 w-auto">
+          <span class="ml-3 text-gray-600 text-sm hidden sm:block">Support Portal</span>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="flex items-center text-gray-600 hidden lg:flex">
+          <i class="bi bi-telephone mr-2"></i>
+          <span class="font-medium">(888) Generac x2222</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    
+    <!-- 404 Error Section -->
+    <div class="text-center fade-in">
+      
+      <!-- Large 404 Number -->
+      <div class="floating mb-8">
+        <div class="error-number">404</div>
+      </div>
+      
+      <!-- Error Message -->
+      <div class="max-w-3xl mx-auto mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold generac-blue mb-6">Page Not Found</h1>
+        <p class="text-xl text-gray-600 mb-4">
+          Oops! The page you're looking for seems to have gone missing.
+        </p>
+        <p class="text-lg text-gray-500">
+          Don't worry, we're here to help you get back on track.
+        </p>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <a href="index.html" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
+          <i class="bi bi-house-door mr-2"></i>
+          Return Home
+        </a>
+        <a href="https://askit.generac.com/support/solutions" class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
+          <i class="bi bi-search mr-2"></i>
+          Browse Solutions
+        </a>
+      </div>
+      
+    </div>
+
+    <!-- Helpful Suggestions -->
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold generac-blue text-center mb-8">What can we help you find?</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Submit a Ticket -->
+        <div class="suggestion-card bg-white rounded-lg p-6 text-center">
+          <div class="icon-large mb-4">
+            <i class="bi bi-ticket-perforated"></i>
+          </div>
+          <h3 class="text-xl font-semibold generac-blue mb-3">Submit a Ticket</h3>
+          <p class="text-gray-600 mb-4">Need help with an IT issue? Create a support ticket and we'll assist you.</p>
+          <a href="https://askit.generac.com/support/tickets/new" class="btn-primary text-white px-6 py-3 rounded-lg font-medium inline-block">
+            Create Ticket
+          </a>
+        </div>
+        
+        <!-- Browse Catalog -->
+        <div class="suggestion-card bg-white rounded-lg p-6 text-center">
+          <div class="icon-large mb-4">
+            <i class="bi bi-grid-3x3-gap"></i>
+          </div>
+          <h3 class="text-xl font-semibold generac-blue mb-3">Service Catalog</h3>
+          <p class="text-gray-600 mb-4">Looking for IT services? Browse our comprehensive service catalog.</p>
+          <a href="https://askit.generac.com/support/catalog/items" class="btn-primary text-white px-6 py-3 rounded-lg font-medium inline-block">
+            Browse Services
+          </a>
+        </div>
+        
+        <!-- Knowledge Base -->
+        <div class="suggestion-card bg-white rounded-lg p-6 text-center">
+          <div class="icon-large mb-4">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+          <h3 class="text-xl font-semibold generac-blue mb-3">Knowledge Base</h3>
+          <p class="text-gray-600 mb-4">Find answers and solutions in our comprehensive knowledge base.</p>
+          <a href="https://askit.generac.com/support/solutions" class="btn-primary text-white px-6 py-3 rounded-lg font-medium inline-block">
+            Search Solutions
+          </a>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="max-w-3xl mx-auto mt-16 text-center">
+      <div class="bg-white rounded-lg shadow-md p-8 border border-gray-200">
+        <h3 class="text-2xl font-bold generac-blue mb-4">Still Need Help?</h3>
+        <p class="text-gray-600 mb-6">
+          Our IT support team is ready to assist you with any questions or technical issues.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:(888)436-3722" class="btn-primary text-white px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center">
+            <i class="bi bi-telephone mr-2"></i>
+            Call (888) Generac x2222
+          </a>
+          <a href="https://askit.generac.com/support/tickets" class="btn-secondary px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center">
+            <i class="bi bi-envelope mr-2"></i>
+            View Your Tickets
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 py-8 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-sm text-gray-600">
+        <p class="mb-2">© 2025 Generac Power Systems, Inc. | askIT Service Catalog</p>
+        <p>For technical support, call <span class="font-medium">(888) Generac x2222</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Add some interactive functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate the 404 number on load
+      const errorNumber = document.querySelector('.error-number');
+      if (errorNumber) {
+        errorNumber.style.opacity = '0';
+        errorNumber.style.transform = 'scale(0.8)';
+        
+        setTimeout(() => {
+          errorNumber.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          errorNumber.style.opacity = '1';
+          errorNumber.style.transform = 'scale(1)';
+        }, 300);
+      }
+      
+      // Add hover effect to suggestion cards
+      const cards = document.querySelectorAll('.suggestion-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          card.style.transition = 'all 0.6s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 600 + (index * 150));
+      });
+      
+      // Track 404 page visit (for analytics)
+      console.log('404 Page visited:', window.location.href);
+    });
+  </script>
+
+</body>
+</html>
